@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/cursor.min.css">
     <script src="/js/cursor.min.js"></script>
     <meta charset="utf-8" />
-    <title>categories | Tianzhen</title>
+    <title>深入了解JWT（JSON Web Token） | Tianzhen</title>
     <meta name="author" content="Tianzhen" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -163,47 +167,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                个人纪录
-            </a>
+            <div class="article">
+    <div>
+        <h1>深入了解JWT（JSON Web Token）</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/30
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                前端网页
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                内网穿透
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Web%E5%BC%80%E5%8F%91/" style="background: #ff7d73">
+        <span class="category">
+            <a href="/categories/Web%E5%BC%80%E5%8F%91/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -212,7 +189,91 @@
         </span>
         
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/JWT/" style="color: #00bcd4">JWT</a>
+            </span>
+            
+        </span>
+        
     </div>
+    
+    <div class="content" v-pre>
+        <blockquote>
+<p>什么是JWT？</p>
+</blockquote>
+<p>JWT是一种开放标准（RFC 7519），定义了一种紧凑且自包含的方式，用于在各方之间安全地传输信息。它通常用于在网络上的两个系统之间进行身份验证和信息传递。</p>
+<blockquote>
+<p>JWT的结构</p>
+</blockquote>
+<p>一个JWT通常由三部分组成：头部（Header）、载荷（Payload）和签名（Signature）。</p>
+<ul>
+<li>头部（Header）</li>
+</ul>
+<p>头部通常包含两部分信息：令牌的类型（”typ”）和所使用的算法（”alg”）。</p>
+<pre><code class="json">&#123;
+  &quot;alg&quot;: &quot;HS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+&#125;
+</code></pre>
+<ul>
+<li>载荷（Payload）</li>
+</ul>
+<p>载荷包含了一系列声明，表示要传递的用户信息。</p>
+<pre><code class="json">&#123;
+  &quot;sub&quot;: &quot;1234567890&quot;,
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;iat&quot;: 1516239022
+&#125;
+</code></pre>
+<p>这个负载包含了一些声明（claims），包括 “sub”（主题，通常是用户的唯一标识）、”name”（姓名）、”iat”（发布时间，即令牌的创建时间）等。</p>
+<ul>
+<li>签名（Signature）</li>
+</ul>
+<p>签名用于验证发送者的身份，确保令牌在传输过程中没有被篡改。</p>
+<blockquote>
+<p>JWT的生成与验证</p>
+</blockquote>
+<p>假设服务器端使用密钥 “secret” 进行签名，生成JWT的过程如下：</p>
+<pre><code class="plaintext"># Base64编码的头部
+eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9
+
+# Base64编码的载荷
+eyJzdWIiOiAiMTIzNDU2Nzg5MCIsICJuYW1lIjogIkpvaG4gRG9lIiwgImlhdCI6IDE1MTYyMzkwMjJ9
+
+# HMAC SHA256签名
+UJfr8bN4blKnFCD3V2pYxaLZXrsd4dhl6ZlMz1Y9nOM
+</code></pre>
+<p>最终，JWT 就是将编码后的头部、负载和签名用点（.）连接在一起：</p>
+<pre><code class="plaintext">eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiMTIzNDU2Nzg5MCIsICJuYW1lIjogIkpvaG4gRG9lIiwgImlhdCI6IDE1MTYyMzkwMjJ9.UJfr8bN4blKnFCD3V2pYxaLZXrsd4dhl6ZlMz1Y9nOM
+</code></pre>
+<p>客户端收到JWT后，可以通过解码 Base64 部分查看头部和载荷，然后使用密钥验证签名的合法性。</p>
+<blockquote>
+<p>JWT的应用场景</p>
+</blockquote>
+<ul>
+<li><strong>身份验证：</strong> JWT经常用于身份验证机制，允许用户在不同系统之间无需再次登录。</li>
+<li><strong>信息传递：</strong> JWT可用于在系统之间安全地传递信息，如用户权限、个人信息等。</li>
+</ul>
+<blockquote>
+<p>结语</p>
+</blockquote>
+<p>JWT是一种灵活且安全的标准，广泛应用于现代网络开发中。了解JWT的结构和原理有助于更好地理解和使用这一技术。</p>
+<p>以上示例展示了JWT的生成和验证过程，希望对你理解JWT有所帮助！</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -277,6 +338,12 @@ setInterval("createtime()",250);
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 <p style="text-align:center" id="saintwei"></p>
