@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/cursor.min.css">
     <script src="/js/cursor.min.js"></script>
     <meta charset="utf-8" />
-    <title>tags | Tianzhen</title>
+    <title>关于Front Matter | Tianzhen</title>
     <meta name="author" content="Tianzhen" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -163,133 +167,106 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>关于Front Matter</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/1
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="background: #00bcd4">
+        <span class="category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                个人纪录
+                前端网页
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/Base64/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Base64
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Hexo/" style="color: #00a596">Hexo</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/ParticleX/" style="color: #ff7d73">ParticleX</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Front-Matter/" style="color: #00a596">Front Matter</a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8A%A0%E5%AF%86/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                编码与加密
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/JWT/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                JWT
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Hexo/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Hexo
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/ParticleX/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                ParticleX
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                路线规划
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                内网穿透
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%86%85%E7%BD%91%E5%BB%BA%E7%AB%99/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                内网建站
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/loophole/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                loophole
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Front-Matter/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Front Matter
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>当你使用静态网站生成器（如 Hexo、Jekyll 等）构建你的博客时，你经常会遇到一个名为 Front Matter 的概念。Front Matter 是一种位于文章或页面顶部的元数据块，它提供了关于文章的重要信息。在这篇博文中，我们将深入介绍 Front Matter 的作用、语法以及如何在 Hexo 中使用它。</p>
+<blockquote>
+<p>什么是 Front Matter？</p>
+</blockquote>
+<p>Front Matter 是指位于文章或页面开头的元数据块，用于定义文章的一些基本信息。这些信息可能包括文章的标题、日期、作者、标签、分类等。Front Matter 的存在使得静态网站生成器能够解析和理解文章的元信息，以便更好地构建和呈现网站。</p>
+<blockquote>
+<p>Front Matter 的语法</p>
+</blockquote>
+<p>在大多数静态网站生成器中，Front Matter 使用 YAML、JSON 或 TOML 等格式来表示。在本文中，我们主要关注使用 YAML 的语法。</p>
+<p>一个典型的 Front Matter 示例如下：</p>
+<pre><code class="yaml">---
+title: &quot;介绍 Front Matter&quot;
+date: 2023-12-01
+author: Your Name
+tags:
+  - Hexo
+  - Jekyll
+---
+</code></pre>
+<p>在这个示例中，<code>---</code> 是 Front Matter 的起始和结束标记，中间是元信息的定义。每一行都由一个键值对组成，键和值之间用冒号分隔，键和值之间用空格缩进。数组可以用连字符加空格表示。</p>
+<blockquote>
+<p>Front Matter 的作用</p>
+</blockquote>
+<p>Front Matter 的主要作用有几个方面：</p>
+<ol>
+<li><strong>定义元信息：</strong> Front Matter 允许你为文章提供一些关键信息，如标题、日期、作者、标签等。这些信息对于网站生成器和主题的正确渲染至关重要。</li>
+<li><strong>个性化设置：</strong> 你可以在 Front Matter 中设置一些个性化的配置，比如文章的布局、摘要、封面图等。这有助于使每篇文章具有独特的外观和风格。</li>
+<li><strong>影响生成和渲染：</strong> 网站生成器可以根据 Front Matter 中的信息决定如何处理和呈现文章。例如，可能影响文章的 URL 结构、在首页的展示方式等。</li>
+</ol>
+<blockquote>
+<p>在 Hexo 中使用 Front Matter</p>
+</blockquote>
+<p>在 Hexo 中，使用 Front Matter 是非常简单的。当你创建一个新的文章时，Hexo 会自动在文件开头插入默认的 Front Matter，包括标题和日期。你可以根据需要编辑和扩展这个 Front Matter，以满足你的具体需求。</p>
+<pre><code class="yaml">---
+title: &quot;你的文章标题&quot;
+date: 2023-12-01
+author: 你的名字
+tags:
+  - Hexo
+  - Front Matter
+---
+</code></pre>
+<p>通过编辑这个 Front Matter，你可以轻松地配置文章的各种信息，使其更符合你的预期。</p>
+<p>在总结中，Front Matter 是静态网站生成器中一项强大而灵活的功能，允许你以结构化的方式定义和配置文章的元信息。通过合理使用 Front Matter，你可以更好地管理和呈现你的博客内容。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -354,6 +331,12 @@ setInterval("createtime()",250);
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 <p style="text-align:center" id="saintwei"></p>
