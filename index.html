@@ -212,67 +212,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <blockquote>
-<p>什么是JWT？</p>
-</blockquote>
-<p>JWT是一种开放标准（RFC 7519），定义了一种紧凑且自包含的方式，用于在各方之间安全地传输信息。它通常用于在网络上的两个系统之间进行身份验证和信息传递。</p>
-<blockquote>
-<p>JWT的结构</p>
-</blockquote>
-<p>一个JWT通常由三部分组成：头部（Header）、载荷（Payload）和签名（Signature）。</p>
-<ul>
-<li>头部（Header）</li>
-</ul>
-<p>头部通常包含两部分信息：令牌的类型（”typ”）和所使用的算法（”alg”）。</p>
-<pre><code class="json">&#123;
-  &quot;alg&quot;: &quot;HS256&quot;,
-  &quot;typ&quot;: &quot;JWT&quot;
-&#125;
-</code></pre>
-<ul>
-<li>载荷（Payload）</li>
-</ul>
-<p>载荷包含了一系列声明，表示要传递的用户信息。</p>
-<pre><code class="json">&#123;
-  &quot;sub&quot;: &quot;1234567890&quot;,
-  &quot;name&quot;: &quot;John Doe&quot;,
-  &quot;iat&quot;: 1516239022
-&#125;
-</code></pre>
-<p>这个负载包含了一些声明（claims），包括 “sub”（主题，通常是用户的唯一标识）、”name”（姓名）、”iat”（发布时间，即令牌的创建时间）等。</p>
-<ul>
-<li>签名（Signature）</li>
-</ul>
-<p>签名用于验证发送者的身份，确保令牌在传输过程中没有被篡改。</p>
-<blockquote>
-<p>JWT的生成与验证</p>
-</blockquote>
-<p>假设服务器端使用密钥 “secret” 进行签名，生成JWT的过程如下：</p>
-<pre><code class="plaintext"># Base64编码的头部
-eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9
-
-# Base64编码的载荷
-eyJzdWIiOiAiMTIzNDU2Nzg5MCIsICJuYW1lIjogIkpvaG4gRG9lIiwgImlhdCI6IDE1MTYyMzkwMjJ9
-
-# HMAC SHA256签名
-UJfr8bN4blKnFCD3V2pYxaLZXrsd4dhl6ZlMz1Y9nOM
-</code></pre>
-<p>最终，JWT 就是将编码后的头部、负载和签名用点（.）连接在一起：</p>
-<pre><code class="plaintext">eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiMTIzNDU2Nzg5MCIsICJuYW1lIjogIkpvaG4gRG9lIiwgImlhdCI6IDE1MTYyMzkwMjJ9.UJfr8bN4blKnFCD3V2pYxaLZXrsd4dhl6ZlMz1Y9nOM
-</code></pre>
-<p>客户端收到JWT后，可以通过解码 Base64 部分查看头部和载荷，然后使用密钥验证签名的合法性。</p>
-<blockquote>
-<p>JWT的应用场景</p>
-</blockquote>
-<ul>
-<li><strong>身份验证：</strong> JWT经常用于身份验证机制，允许用户在不同系统之间无需再次登录。</li>
-<li><strong>信息传递：</strong> JWT可用于在系统之间安全地传递信息，如用户权限、个人信息等。</li>
-</ul>
-<blockquote>
-<p>结语</p>
-</blockquote>
-<p>JWT是一种灵活且安全的标准，广泛应用于现代网络开发中。了解JWT的结构和原理有助于更好地理解和使用这一技术。</p>
-<p>以上示例展示了JWT的生成和验证过程，希望对你理解JWT有所帮助！</p>
+            <p><strong>JWT碎碎念</strong></p>
 
             
         </div>
@@ -287,7 +227,7 @@ UJfr8bN4blKnFCD3V2pYxaLZXrsd4dhl6ZlMz1Y9nOM
         
         <span class="tag">
             
-            <a href="/tags/JWT/" style="color: #ffa2c4">JWT</a>
+            <a href="/tags/JWT/" style="color: #00a596">JWT</a>
         </span>
         
     </div>
@@ -321,40 +261,7 @@ UJfr8bN4blKnFCD3V2pYxaLZXrsd4dhl6ZlMz1Y9nOM
     <div class="description">
         <div class="content" v-pre>
             
-            <blockquote>
-<p>什么是Base64编码?</p>
-</blockquote>
-<p>Base64编码是一种将二进制数据转换为可打印ASCII字符的编码方式。它的名称表明它是一种将二进制数据表示为64个不同ASCII字符的方法。Base64广泛用于网络传输、数据存储和各种应用场景，其中需要将二进制数据以文本形式表示。</p>
-<blockquote>
-<p>Base64的原理?</p>
-</blockquote>
-<p>Base64编码的原理是将每三个字节的数据（24位）划分为四组，每组六位。然后，将这四组六位的数据转换为四个对应的ASCII字符。由于2^6等于64，所以每个六位的组合都可以用一个可打印的ASCII字符表示。这样，原始二进制数据的大小被增加了1&#x2F;3，但可以通过普通的文本传输。</p>
-<p>以下是一个简单的示例，将字符串 “Hello, World!” 进行Base64编码：</p>
-<pre><code class="plaintext">72 101 108 108 111 44 32 87 111 114 108 100 33
-</code></pre>
-<p>将ASCII编码转换为二进制：</p>
-<pre><code class="plaintex">01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
-</code></pre>
-<p>将二进制数据以每三个字节一组进行划分：</p>
-<pre><code class="plaintex">010010 000110 010101 011011 011011 011011 110011 011011 000011 010000 010101 011110 011100 111011 011100 110011 011011 010000 010000 001010 101110 111111
-</code></pre>
-<p>将每组六位的数据转换为对应的Base64字符：</p>
-<pre><code>S           G           V           s           e           k           N           y           B           W           9           u           b           3           N
-</code></pre>
-<p>因此，字符串 “Hello, World!” 的Base64编码为 “SGVsekNyBW9ub3N”。Base64编码后的数据可以在文本环境中更容易地传输和处理。需要注意的是，Base64编码不是加密，而是一种编码方式，可以被轻松逆转回原始数据。</p>
-<blockquote>
-<p>为什么要使用Base64编码？</p>
-</blockquote>
-<p>Base64编码有几个常见的应用场景，主要涉及到在不同环境中的数据传输、存储和处理的需求。</p>
-<ol>
-<li><strong>文本传输：</strong> 在文本传输中，有些字符可能会被视为控制字符、特殊字符或者不可打印字符，从而导致传输错误。通过使用Base64编码，可以将二进制数据转换为由ASCII字符组成的字符串，确保数据能够安全、可靠地在文本协议中传输，比如在电子邮件、XML、JSON中嵌入二进制数据。</li>
-<li><strong>URL传输：</strong> 在URL中，某些字符可能会被解释为特殊字符，例如问号、等号、斜杠等。Base64编码将数据转换为URL安全的形式，避免了这些字符引起的问题。</li>
-<li><strong>数据存储：</strong> 在一些存储场景中，二进制数据可能会导致问题，例如在数据库中存储二进制数据可能需要额外的处理。Base64编码可以将二进制数据转换为字符串形式，更容易在各种存储介质中处理。</li>
-<li><strong>编码检查：</strong> 在一些环境中，可能需要对数据进行字符编码检查，以确保数据的完整性和有效性。Base64编码后的数据通常只包含常见的可打印ASCII字符，易于进行编码检查。</li>
-<li><strong>数据处理：</strong> 在某些情况下，需要将二进制数据嵌入到文本中，以便更方便地进行处理。Base64编码提供了一种简便的方式，使得数据能够以字符串形式存储和传输。</li>
-</ol>
-<p><em>需要注意的是，Base64编码不是加密，只是一种编码方式，可以被相对容易地解码。因此，它并不适用于对数据进行安全保护的场景。</em></p>
-<p>总的来说，Base64编码是一种在不同环境中进行数据传输、存储和处理的常用工具，能够很好地满足特定的需求。</p>
+            <p><strong>关于Base64编码的一点常识</strong></p>
 
             
         </div>
@@ -369,17 +276,17 @@ UJfr8bN4blKnFCD3V2pYxaLZXrsd4dhl6ZlMz1Y9nOM
         
         <span class="tag">
             
-            <a href="/tags/Base64/" style="color: #ffa2c4">Base64</a>
+            <a href="/tags/Base64/" style="color: #00bcd4">Base64</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8A%A0%E5%AF%86/" style="color: #00a596">编码与加密</a>
+            <a href="/tags/%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8A%A0%E5%AF%86/" style="color: #ffa2c4">编码与加密</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/JWT/" style="color: #03a9f4">JWT</a>
+            <a href="/tags/JWT/" style="color: #ff7d73">JWT</a>
         </span>
         
     </div>
@@ -413,61 +320,7 @@ UJfr8bN4blKnFCD3V2pYxaLZXrsd4dhl6ZlMz1Y9nOM
     <div class="description">
         <div class="content" v-pre>
             
-            <p>最近在浏览YouTube时偶然发现一款强大的内网穿透工具：loophole，要知道，目前市面上号称免费的内网穿透工具大部分有以下几个缺点：</p>
-<ul>
-<li>限制带宽和流量</li>
-<li>不能指定二级域名或者不能免费指定</li>
-<li>不断变化的域名（不能在内网建站，只能短时间使用）</li>
-<li>需要公网ip做转发（都有公网ip了我还折腾什么）</li>
-<li>需要开启vpn，不能暴露公网，只能自己组局域网使用（zerotier之类）</li>
-</ul>
-<p>但是，loophole就不存在以上问题。</p>
-<blockquote>
-<p>1、什么是loophole</p>
-</blockquote>
-<p>Loophole.cloud是若干免费内网穿透工具中提供公共服务且相对稳定的一个，支持Windows、Linux（包括嵌入式设备）、MacOS，同时提供cli和desktop程序。目前，loophole服务仅在欧洲托管。loophole的客户端cli是开源的，官方自述“就目前而言，我们希望通过测试期以稳定系统，希望明年能提供自托管服务”。loophole服务提供的功能包括：</p>
-<ul>
-<li>公开本地HTTP服务器</li>
-<li>公开在网络中任何计算机上运行的HTTP服务器</li>
-<li>通过HTTPS公开本地目录</li>
-<li>通过WebDav公开本地目录</li>
-<li>基本身份验证</li>
-</ul>
-<p>功能上公开本地HTTP服务器，就是<strong>网站发布</strong>，这个网站可以是一个博客、一个影视库，也可以是一个论坛系统等。另外一款工具zrok将这类功能总结为<strong>共享文件</strong>，定义很准确，无论是html、css、js还是其他文件，无非都是公布出去别人能获取到并在浏览器或其他程序中解析、渲染、呈现。因此，webdav公开本地目录、前端调试等都是以为网站发布&#x2F;文件共享功能为基础的。</p>
-<blockquote>
-<p>2、安装</p>
-</blockquote>
-<p>无需安装，只需要解压对应的压缩包即可，这里引用作者的Cli版本的压缩包链接：</p>
-<p><a target="_blank" rel="noopener" href="https://appscross.com/Sharetools/Tools%20Share/loophole/cli/windows">Windows</a></p>
-<p><a target="_blank" rel="noopener" href="https://appscross.com/Sharetools/Tools%20Share/loophole/cli/linux">Linux</a></p>
-<p><a target="_blank" rel="noopener" href="https://appscross.com/Sharetools/Tools%20Share/loophole/cli/MacOS">MacOS</a></p>
-<p>Linux或者MacOS也可以直接拉取：</p>
-<pre><code class="shell">wget https://github.com/loophole/cli/releases/download/1.0.0-beta.15/loophole-cli_1.0.0-beta.15_linux_armv7.tar.gz
-#github无法下载时可使用以下备用链接
-#wget https://appscross.com/Sharetools/Tools%20Share/loophole/cli/linux/loophole-cli_1.0.0-beta.15_linux_armv7.tar.gz
-
-#解压并进入loophole目录
-tar zxvf loophole-cli_1.0.0-beta.15_linux_armv7.tar.gz &amp;&amp; cd loophole-cli_1.0.0-beta.15_linux_armv7/
-</code></pre>
-<blockquote>
-<p>3、网站发布</p>
-</blockquote>
-<p>然后我们在命令行下打开，在发布内网网站之前，我们需要先登录，以Windows为例：</p>
-<pre><code class="powershell">loophole account login
-</code></pre>
-<p>然后会给我们一个链接和验证码，只需打开验证即可，然后会要求我们登录，可以使用GitHub账号直接登录，之后返回cmd，我们可以通过指定端口和ip来映射到公网，或者开启https：</p>
-<pre><code class="powershell">loophole http [端口] [ip] [--https]
-</code></pre>
-<p>可以映射局域网内的所有设备，只需端口和ip即可，十分方便。</p>
-<p>在默认情况下，loophole会给我们分配一个随机的二级域名，在我们退出之前，这个二级域名不会发生变化。</p>
-<p><strong>如果想要自定义二级域名</strong>，只需在后面加上–hostname [自定义]，例如：</p>
-<pre><code class="powershell">loophole http [端口] [ip] [--https] [--hostname][自定义]
-</code></pre>
-<p>如果自定义的域名没有被占用的话，loophole会为我们分配一个<strong>自定义.loophole.site</strong>的域名，这时我们就可以在公网访问这个域名了。而且虽然服务器在欧洲，实测不需要科学也能访问。</p>
-<p><strong>请注意，如果报错，请尝试更换一个域名</strong></p>
-<p>当然了，loophole还有其他玩法，后面我会继续分享。</p>
-<hr>
-<p>参考：<a target="_blank" rel="noopener" href="https://appscross.com/2023/11/use-loophole-to-publish-website/">使用loophole发布网站</a></p>
+            <p><strong>一个好用的内网穿透工具</strong></p>
 
             
         </div>
@@ -482,17 +335,17 @@ tar zxvf loophole-cli_1.0.0-beta.15_linux_armv7.tar.gz &amp;&amp; cd loophole-cl
         
         <span class="tag">
             
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">内网穿透</a>
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%86%85%E7%BD%91%E5%BB%BA%E7%AB%99/" style="color: #00bcd4">内网建站</a>
+            <a href="/tags/%E5%86%85%E7%BD%91%E5%BB%BA%E7%AB%99/" style="color: #ffa2c4">内网建站</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/loophole/" style="color: #ffa2c4">loophole</a>
+            <a href="/tags/loophole/" style="color: #00bcd4">loophole</a>
         </span>
         
     </div>
@@ -526,11 +379,7 @@ tar zxvf loophole-cli_1.0.0-beta.15_linux_armv7.tar.gz &amp;&amp; cd loophole-cl
     <div class="description">
         <div class="content" v-pre>
             
-            <p> 科班出身的人总会有一些各种各样的疑虑，我到底是走开发呢还是研究算法呢，我是拼绩点呢还是拿证书呢。也可能都没有，但是你总要选择，总要选择一条适合自己的路线进步。进入大学之后，诚然，很多人不是一开始就好好学习的，很多人前两年并没有积累什么技术。我也是这样，我也很后悔大一大二没有参加比赛，没有拿到什么证书。那我以后就要继续摆烂吗，我后面该怎么发展。</p>
-<p>我相信很多人跟我一样的经历，学校本身没有竞赛氛围，专业老师也只会讲一些过时内容。唯一能学习的方式也就是通过b站，但是这没办法，如果选择了b站自学，如果选择了走开发路线，那就一条路走到底，我一直觉得要做就做好，不做就不做。</p>
-<p>所以如果你大一大二就没什么竞赛经历，算法水平不强，那你就别想着通过打比赛来得到认可，那不是你的路，你应该认清自己的优势，然后坚定不移走自己的道路，就算最后还是失败，至少学到了真东西。而不是人云亦云，到最后什么也没弄好。</p>
-<p>当然，我是针对大一大二没有好好学习的同学，是时候做出选择了，如果是刚入学的同学，我还是建议不要给自己设上限，大数据，ai，前端后端，游戏开发都可以学的，技多不压身。</p>
-<p>我只是希望无数想我这样的b站自学者，最后都能学有所成，进入大厂，实现自己的愿望。</p>
+            <p><strong>小感触</strong></p>
 
             
         </div>
@@ -545,7 +394,7 @@ tar zxvf loophole-cli_1.0.0-beta.15_linux_armv7.tar.gz &amp;&amp; cd loophole-cl
         
         <span class="tag">
             
-            <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="color: #00bcd4">个人纪录</a>
+            <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="color: #ff7d73">个人纪录</a>
         </span>
         
         <span class="tag">
@@ -584,52 +433,7 @@ tar zxvf loophole-cli_1.0.0-beta.15_linux_armv7.tar.gz &amp;&amp; cd loophole-cl
     <div class="description">
         <div class="content" v-pre>
             
-            <p>我在搭建静态网页时，发现favicon不能正常加载的问题，我去看了作者的源码，发现配置文件中没有favicon的接口，但是其教程里却有：</p>
-<pre><code class="yaml"># Avatar image
-avatar: /images/avatar.jpg
-
-# Favicon
-favicon: /images/favicon.png
-
-# Home page background image
-background:
-    - /images/background.jpg
-
-# Loading image
-loading: /images/loading.gif
-
-# Optional colors for category and tag
-colors:
-    - &quot;#ffa2c4&quot;
-    - &quot;#00bcd4&quot;
-    - &quot;#03a9f4&quot;
-    - &quot;#00a596&quot;
-    - &quot;#ff7d73&quot;
-</code></pre>
-<p>我以为不能正常加载是由于作者漏写了这个接口，我在加上后仍不能正常加载favicon，我研究了好久，发现作者其实是把favicon和avatar共用了一个图标，但这并不能解决我的问题，最后想到可能是由于<head></head>标签内内容过多，然后我将layout.ejs中的<link rel="icon" href="<%- url_for(theme.avatar) %>" />移到了<head></head>最前面，为了先渲染标签页图标，最后，我解决了问题。如下：</p>
-<pre><code class="html">&lt;/head&gt;
-    &lt;link rel=&quot;icon&quot; href=&quot;&lt;%- url_for(theme.avatar) %&gt;&quot; /&gt;
-
-    &lt;script src=&quot;/js/&lt;file&gt;&quot;&gt;&lt;/script&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/&lt;file&gt;&quot; /&gt;
-    &lt;canvas id=&quot;fireworks&quot; style=&quot;position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767&quot;&gt;&lt;/canvas&gt;
-    &lt;script src=&quot;https://cdn.staticfile.org/animejs/3.2.1/anime.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;/js/fireworks.min.js&quot;&gt;&lt;/script&gt;
-    &lt;canvas id=&quot;background&quot; style=&quot;position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1&quot;&gt;&lt;/canvas&gt;
-    &lt;script src=&quot;/js/background.min.js&quot;&gt;&lt;/script&gt;
-    &lt;div id=&quot;cursor&quot;&gt;&lt;/div&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/cursor.min.css&quot;&gt;
-    &lt;script src=&quot;/js/cursor.min.js&quot;&gt;&lt;/script&gt;
-    &lt;meta charset=&quot;utf-8&quot; /&gt;
-    &lt;title&gt;&lt;%= title %&gt;&lt;/title&gt;
-    &lt;meta name=&quot;author&quot; content=&quot;&lt;%- config.author %&gt;&quot; /&gt;
-    &lt;meta name=&quot;description&quot; content=&quot;&lt;%- config.description %&gt;&quot; /&gt;
-    &lt;meta name=&quot;keywords&quot; content=&quot;&lt;%- config.keywords %&gt;&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot; /&gt;
-    
-    &lt;%- partial(&quot;import&quot;, &#123; type &#125;) %&gt;
-&lt;/head&gt;
-</code></pre>
+            <p><strong>标签页小图标加载不出来的解决办法</strong></p>
 
             
         </div>
@@ -644,12 +448,12 @@ colors:
         
         <span class="tag">
             
-            <a href="/tags/Hexo/" style="color: #03a9f4">Hexo</a>
+            <a href="/tags/Hexo/" style="color: #ff7d73">Hexo</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/ParticleX/" style="color: #00bcd4">ParticleX</a>
+            <a href="/tags/ParticleX/" style="color: #00a596">ParticleX</a>
         </span>
         
     </div>
@@ -683,7 +487,7 @@ colors:
     <div class="description">
         <div class="content" v-pre>
             
-            <p>大家好，这是我第一个静态博客，也是我第一个博客，我之前尝试过wordpress，但是太过傻瓜化的搭建和千篇一律的主题劝退了我，我是想通过建站学习到一点东西的，我不喜欢这种傻瓜化。<br>作为一个完美主义者，我自然是想着要建一个动态博客的，我很了解静态博客的缺点，我是十分乐意用自己所学建一个博客系统的，而且我正在实施，也需要学习更多的内容。<br>那么在这之前，就暂时用这个静态博客来分享我的日常吧。</p>
+            <p><strong>这是我的第一篇文章</strong></p>
 
             
         </div>
@@ -698,7 +502,7 @@ colors:
         
         <span class="tag">
             
-            <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="color: #03a9f4">个人纪录</a>
+            <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="color: #ffa2c4">个人纪录</a>
         </span>
         
     </div>
