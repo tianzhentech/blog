@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/cursor.min.css">
     <script src="/js/cursor.min.js"></script>
     <meta charset="utf-8" />
-    <title>深入了解Base64编码 | Tianzhen</title>
+    <title>Linux磁盘分区查看指南：详解常用命令 | Tianzhen</title>
     <meta name="author" content="Tianzhen" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -169,22 +169,22 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>深入了解Base64编码</h1>
+        <h1>Linux磁盘分区查看指南：详解常用命令</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/30
+            2023/12/3
         </span>
         
         <span class="category">
-            <a href="/categories/Web%E5%BC%80%E5%8F%91/">
+            <a href="/categories/Linux/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                Web开发
+                Linux
             </a>
         </span>
         
@@ -197,17 +197,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Base64/" style="color: #00bcd4">Base64</a>
+                <a href="/tags/Linux/" style="color: #00bcd4">Linux</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8A%A0%E5%AF%86/" style="color: #03a9f4">编码与加密</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/JWT/" style="color: #ff7d73">JWT</a>
+                <a href="/tags/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/" style="color: #00a596">磁盘分区</a>
             </span>
             
         </span>
@@ -215,40 +210,119 @@
     </div>
     
     <div class="content" v-pre>
-        <blockquote>
-<p>什么是Base64编码?</p>
-</blockquote>
-<p>Base64编码是一种将二进制数据转换为可打印ASCII字符的编码方式。它的名称表明它是一种将二进制数据表示为64个不同ASCII字符的方法。Base64广泛用于网络传输、数据存储和各种应用场景，其中需要将二进制数据以文本形式表示。</p>
+        <p>在 Linux 系统中，了解磁盘分区的情况对系统管理和故障排查至关重要。本篇博文将详细介绍常用的命令，帮助你轻松查看磁盘分区信息。</p>
 <blockquote>
-<p>Base64的原理?</p>
+<p>1.lsblk 命令</p>
 </blockquote>
-<p>Base64编码的原理是将每三个字节的数据（24位）划分为四组，每组六位。然后，将这四组六位的数据转换为四个对应的ASCII字符。由于2^6等于64，所以每个六位的组合都可以用一个可打印的ASCII字符表示。这样，原始二进制数据的大小被增加了1&#x2F;3，但可以通过普通的文本传输。</p>
-<p>以下是一个简单的示例，将字符串 “Hello, World!” 进行Base64编码：</p>
-<pre><code class="plaintext">72 101 108 108 111 44 32 87 111 114 108 100 33
+<p><code>lsblk</code> 命令以树状结构显示系统中的块设备，包括磁盘、分区、逻辑卷等信息。</p>
+<pre><code class="bash">[root@localhost ~]# lsblk
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               8:0    0   50G  0 disk
+├─sda1            8:1    0    1G  0 part /boot
+├─sda2            8:2    0   19G  0 part
+│ ├─centos-root 253:0    0   47G  0 lvm  /
+│ └─centos-swap 253:1    0    2G  0 lvm  [SWAP]
+└─sda3            8:3    0   30G  0 part
+  └─centos-root 253:0    0   47G  0 lvm  /
+sr0              11:0    1  4.4G  0 rom
 </code></pre>
-<p>将ASCII编码转换为二进制：</p>
-<pre><code class="plaintex">01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
-</code></pre>
-<p>将二进制数据以每三个字节一组进行划分：</p>
-<pre><code class="plaintex">010010 000110 010101 011011 011011 011011 110011 011011 000011 010000 010101 011110 011100 111011 011100 110011 011011 010000 010000 001010 101110 111111
-</code></pre>
-<p>将每组六位的数据转换为对应的Base64字符：</p>
-<pre><code>S           G           V           s           e           k           N           y           B           W           9           u           b           3           N
-</code></pre>
-<p>因此，字符串 “Hello, World!” 的Base64编码为 “SGVsekNyBW9ub3N”。Base64编码后的数据可以在文本环境中更容易地传输和处理。需要注意的是，Base64编码不是加密，而是一种编码方式，可以被轻松逆转回原始数据。</p>
+<p>这个命令提供了一个清晰的层次结构，展示了磁盘和分区之间的关系。</p>
 <blockquote>
-<p>为什么要使用Base64编码？</p>
+<p>2.fdisk 命令</p>
 </blockquote>
-<p>Base64编码有几个常见的应用场景，主要涉及到在不同环境中的数据传输、存储和处理的需求。</p>
-<ol>
-<li><strong>文本传输：</strong> 在文本传输中，有些字符可能会被视为控制字符、特殊字符或者不可打印字符，从而导致传输错误。通过使用Base64编码，可以将二进制数据转换为由ASCII字符组成的字符串，确保数据能够安全、可靠地在文本协议中传输，比如在电子邮件、XML、JSON中嵌入二进制数据。</li>
-<li><strong>URL传输：</strong> 在URL中，某些字符可能会被解释为特殊字符，例如问号、等号、斜杠等。Base64编码将数据转换为URL安全的形式，避免了这些字符引起的问题。</li>
-<li><strong>数据存储：</strong> 在一些存储场景中，二进制数据可能会导致问题，例如在数据库中存储二进制数据可能需要额外的处理。Base64编码可以将二进制数据转换为字符串形式，更容易在各种存储介质中处理。</li>
-<li><strong>编码检查：</strong> 在一些环境中，可能需要对数据进行字符编码检查，以确保数据的完整性和有效性。Base64编码后的数据通常只包含常见的可打印ASCII字符，易于进行编码检查。</li>
-<li><strong>数据处理：</strong> 在某些情况下，需要将二进制数据嵌入到文本中，以便更方便地进行处理。Base64编码提供了一种简便的方式，使得数据能够以字符串形式存储和传输。</li>
-</ol>
-<p><em>需要注意的是，Base64编码不是加密，只是一种编码方式，可以被相对容易地解码。因此，它并不适用于对数据进行安全保护的场景。</em></p>
-<p>总的来说，Base64编码是一种在不同环境中进行数据传输、存储和处理的常用工具，能够很好地满足特定的需求。</p>
+<p><code>fdisk</code> 命令用于处理磁盘分区表。使用以下命令查看所有磁盘及其分区：</p>
+<pre><code class="bash">[root@localhost ~]# fdisk -l
+
+磁盘 /dev/sda：53.7 GB, 53687091200 字节，104857600 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘标签类型：dos
+磁盘标识符：0x000bcfaf
+
+   设备 Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
+
+磁盘 /dev/mapper/centos-root：50.5 GB, 50457477120 字节，98549760 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+
+
+磁盘 /dev/mapper/centos-swap：2147 MB, 2147483648 字节，4194304 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+</code></pre>
+<p>这将列出系统中所有磁盘的分区情况，包括分区的起始和结束扇区、类型等信息。</p>
+<blockquote>
+<p>3.parted 命令</p>
+</blockquote>
+<p><code>parted</code> 是一个用于查看和管理磁盘分区的工具。以下命令列出所有分区及其详细信息：</p>
+<pre><code class="bash">[root@localhost ~]# sudo parted -l
+Model: VMware, VMware Virtual S (scsi)
+Disk /dev/sda: 53.7GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags:
+
+Number  Start   End     Size    Type     File system  标志
+ 1      1049kB  1075MB  1074MB  primary  xfs          启动
+ 2      1075MB  21.5GB  20.4GB  primary               lvm
+
+
+Model: Linux device-mapper (linear) (dm)
+Disk /dev/mapper/centos-swap: 2147MB
+Sector size (logical/physical): 512B/512B
+Partition Table: loop
+Disk Flags:
+
+Number  Start  End     Size    File system     标志
+ 1      0.00B  2147MB  2147MB  linux-swap(v1)
+
+
+Model: Linux device-mapper (linear) (dm)
+Disk /dev/mapper/centos-root: 50.5GB
+Sector size (logical/physical): 512B/512B
+Partition Table: loop
+Disk Flags:
+
+Number  Start  End     Size    File system  标志
+ 1      0.00B  50.5GB  50.5GB  xfs
+</code></pre>
+<p><code>parted</code> 提供了更多分区信息，如文件系统类型、分区大小等。</p>
+<blockquote>
+<p>4.df 命令</p>
+</blockquote>
+<p><code>df</code> 命令用于显示已挂载文件系统的磁盘空间使用情况。以下是一个简单的例子：</p>
+<pre><code class="bash">[root@localhost ~]# df -h
+文件系统                 容量  已用  可用 已用% 挂载点
+devtmpfs                 894M     0  894M    0% /dev
+tmpfs                    910M     0  910M    0% /dev/shm
+tmpfs                    910M   11M  899M    2% /run
+tmpfs                    910M     0  910M    0% /sys/fs/cgroup
+/dev/mapper/centos-root   47G   14G   34G   29% /
+/dev/sda1               1014M  241M  774M   24% /boot
+tmpfs                    182M   28K  182M    1% /run/user/1000
+overlay                   47G   14G   34G   29% /var/lib/docker/overlay2/56ffb33faca98f0a38b789cc7df02341f9dbd5e83f9244de6d6a48872ac56605/merged
+overlay                   47G   14G   34G   29% /var/lib/docker/overlay2/69a6901d9caeab8e4b276ccd5ca54a3244610ef78f28db4e364c8a5474458ab3/merged
+tmpfs                    182M     0  182M    0% /run/user/0
+</code></pre>
+<p>这个命令显示已挂载的文件系统、使用情况以及可用空间。</p>
+<blockquote>
+<p>5.blkid 命令</p>
+</blockquote>
+<p><code>blkid</code> 命令用于查看块设备的 UUID 和文件系统类型。以下是一个基本用法：</p>
+<pre><code class="bash">[root@localhost ~]# blkid
+/dev/sda1: UUID=&quot;68f80fa9-57c6-40de-8edf-e7b3ccd7b4a9&quot; TYPE=&quot;xfs&quot;
+/dev/sda2: UUID=&quot;b2PfEQ-1n5s-Jpwe-gbyj-PM1i-crSg-kGzRvM&quot; TYPE=&quot;LVM2_member&quot;
+/dev/sda3: UUID=&quot;jCHNES-Jduc-whUS-9J95-pcSc-wQhj-jG8hjI&quot; TYPE=&quot;LVM2_member&quot;
+/dev/mapper/centos-root: UUID=&quot;a67fe592-2686-40aa-85a6-f15940373cbd&quot; TYPE=&quot;xfs&quot;
+/dev/mapper/centos-swap: UUID=&quot;78c7aab1-f1ce-43c3-a9ef-ef64d9520c4a&quot; TYPE=&quot;swap&quot;
+</code></pre>
+<p><code>blkid</code> 提供了每个块设备的详细信息，包括 UUID、文件系统类型等。</p>
+<p>以上这些命令在日常系统管理和故障排查中经常用到，通过它们你可以全面了解系统中磁盘分区的情况。在使用这些命令时，请确保有足够的权限，有些命令可能需要使用 <code>sudo</code> 运行。希望这篇博文对你在 Linux 系统中查看磁盘分区信息时有所帮助。</p>
 
     </div>
     
