@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/cursor.min.css">
     <script src="/js/cursor.min.js"></script>
     <meta charset="utf-8" />
-    <title>Categories: 个人纪录 | Tianzhen</title>
+    <title>VMware下Linux虚拟机扩容操作详解 | Tianzhen</title>
     <meta name="author" content="Tianzhen" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -163,60 +167,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                个人纪录
-            </a>
+            <div class="article">
+    <div>
+        <h1>VMware下Linux虚拟机扩容操作详解</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/3
         </span>
         
-        
-        
-        
-        
-        <span>
-            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                前端网页
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Web%E5%BC%80%E5%8F%91/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Web开发
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                内网穿透
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Linux/" style="background: #ff7d73">
+        <span class="category">
+            <a href="/categories/Linux/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -225,84 +189,87 @@
         </span>
         
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Linux/" style="color: #00a596">Linux</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/" style="color: #ff7d73">磁盘分区</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/VMware/" style="color: #03a9f4">VMware</a>
+            </span>
+            
+        </span>
+        
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/11/8</div>
-            <a href="/2023/11/08/luxian/">
-                <h3>坚定不移走适合自己的路线</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        个人纪录
-                    </a>
-                </span>
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="color: #ffa2c4">个人纪录</a>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92/" style="color: #ff7d73">路线规划</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>在使用 VMware 虚拟机的过程中，有时候我们需要扩展虚拟机的硬盘空间。这篇博文将介绍两种方法，一种是使用 fdisk 进行分区，另一种是使用 parted 命令进行操作。两种方法的操作步骤基本一致，其中方法一多了一步分区的操作。</p>
+<blockquote>
+<h1 id="方法一：使用-fdisk-进行分区"><a href="#方法一：使用-fdisk-进行分区" class="headerlink" title="方法一：使用 fdisk 进行分区"></a>方法一：使用 fdisk 进行分区</h1></blockquote>
+<h4 id="1-创建分区（fdisk）"><a href="#1-创建分区（fdisk）" class="headerlink" title="1. 创建分区（fdisk）"></a>1. 创建分区（fdisk）</h4><pre><code class="bash">fdisk /dev/sda
+# 在命令环境中按 n 键，一路按回车，最后按 w 键保存，然后按 q 键退出
+</code></pre>
+<h4 id="2-创建物理卷（pvcreate）"><a href="#2-创建物理卷（pvcreate）" class="headerlink" title="2. 创建物理卷（pvcreate）"></a>2. 创建物理卷（pvcreate）</h4><pre><code class="bash">pvcreate /dev/sda3  # sda3 根据第一步中创建的分区名称进行替换
+</code></pre>
+<h4 id="3-将磁盘扩展到卷组（vgextend）"><a href="#3-将磁盘扩展到卷组（vgextend）" class="headerlink" title="3. 将磁盘扩展到卷组（vgextend）"></a>3. 将磁盘扩展到卷组（vgextend）</h4><pre><code class="bash">vgextend centos /dev/sda3  # sda3 根据第一步中创建的分区名称进行替换
+</code></pre>
+<h4 id="4-扩展逻辑分区（lvextend）"><a href="#4-扩展逻辑分区（lvextend）" class="headerlink" title="4. 扩展逻辑分区（lvextend）"></a>4. 扩展逻辑分区（lvextend）</h4><pre><code class="bash"># 根据实际情况选择扩容到 centos-root 还是 centos-home 逻辑分区，请修改注释
+# 100% 是将所有的磁盘空间扩容到指定分区，也可以根据需要进行调整比例
+# 也支持指定大小，比如 10G 等等（指定固定值时参数 -l 需要修改为 -L)
+lvextend -l+100%FREE /dev/mapper/centos-root
+# lvextend -l+100%FREE /dev/mapper/centos-home
+</code></pre>
+<h4 id="5-使扩展生效（xfs-growfs）"><a href="#5-使扩展生效（xfs-growfs）" class="headerlink" title="5. 使扩展生效（xfs_growfs）"></a>5. 使扩展生效（xfs_growfs）</h4><pre><code class="bash">xfs_growfs /dev/mapper/centos-root  # 根据扩容的分区进行选择使用
+</code></pre>
+<h4 id="6-查看（df-H）"><a href="#6-查看（df-H）" class="headerlink" title="6. 查看（df -H）"></a>6. 查看（df -H）</h4><pre><code class="bash">df -H
+</code></pre>
+<blockquote>
+<h1 id="方法二：使用-parted-命令进行操作"><a href="#方法二：使用-parted-命令进行操作" class="headerlink" title="方法二：使用 parted 命令进行操作"></a>方法二：使用 parted 命令进行操作</h1></blockquote>
+<h4 id="1-查看磁盘情况：打印可用空间"><a href="#1-查看磁盘情况：打印可用空间" class="headerlink" title="1. 查看磁盘情况：打印可用空间"></a>1. 查看磁盘情况：打印可用空间</h4><pre><code class="bash">parted /dev/sda print free
+</code></pre>
+<h4 id="2-分配剩余的可用空间"><a href="#2-分配剩余的可用空间" class="headerlink" title="2. 分配剩余的可用空间"></a>2. 分配剩余的可用空间</h4><pre><code class="bash"># 将剩余的可用空间分配到 /dev/sda2，根据实际修改磁盘
+# resizepart 中的 2 表示第二个分区即：/dev/sda2 
+# 100% 将所有的空闲空间分配给 /dev/sda2，也可以用单位和百分比
+parted /dev/sda resizepart 2 100%
+</code></pre>
+<h4 id="3-刷新物理卷"><a href="#3-刷新物理卷" class="headerlink" title="3. 刷新物理卷"></a>3. 刷新物理卷</h4><pre><code class="bash"># 分区的空间修改了，也要刷新一下 pv 物理卷的大小，这样 pv 才能识别变动的空间
+pvresize /dev/sda2
+</code></pre>
+<h4 id="4-查看物理卷是否变化"><a href="#4-查看物理卷是否变化" class="headerlink" title="4. 查看物理卷是否变化"></a>4. 查看物理卷是否变化</h4><pre><code class="bash"># 查看 pv 中 free 项中是否显示了可用的空间
+pvdisplay
+</code></pre>
+<h4 id="5-扩展逻辑分区"><a href="#5-扩展逻辑分区" class="headerlink" title="5. 扩展逻辑分区"></a>5. 扩展逻辑分区</h4><pre><code class="bash"># 开始增加到逻辑卷中
+lvextend -l+100%FREE /dev/mapper/centos-root
+</code></pre>
+<h4 id="6-使扩展生效（xfs-growfs）"><a href="#6-使扩展生效（xfs-growfs）" class="headerlink" title="6. 使扩展生效（xfs_growfs）"></a>6. 使扩展生效（xfs_growfs）</h4><pre><code class="bash">xfs_growfs /dev/mapper/centos-root
+</code></pre>
+<h4 id="7-查看（df-H）"><a href="#7-查看（df-H）" class="headerlink" title="7. 查看（df -H）"></a>7. 查看（df -H）</h4><pre><code class="bash">df -H
+</code></pre>
+<p>以上两种方法均适用于 VMware 下 Linux 虚拟机的硬盘扩容操作。根据实际需求选择合适的方法，并确保在进行操作之前备份重要数据以防止数据丢失。希望这篇博文能够帮助你成功完成虚拟机扩容的操作。</p>
+
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/11/7</div>
-            <a href="/2023/11/07/First/">
-                <h3>First!</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        个人纪录
-                    </a>
-                </span>
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/" style="color: #00a596">个人纪录</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
     </div>
+    
+    
+    
     
 </div>
 
@@ -367,6 +334,29 @@ setInterval("createtime()",250);
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="tianzhen889/tianzhen889.github.io"
+    data-repo-id="R_kgDOKqR37w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOKqR3784CbbeN"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
     
 </body>
 <p style="text-align:center" id="saintwei"></p>
