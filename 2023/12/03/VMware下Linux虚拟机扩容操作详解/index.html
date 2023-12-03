@@ -197,17 +197,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #00a596">Linux</a>
+                <a href="/tags/Linux/" style="color: #ff7d73">Linux</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/" style="color: #ff7d73">磁盘分区</a>
+                <a href="/tags/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/" style="color: #00bcd4">磁盘分区</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/VMware/" style="color: #03a9f4">VMware</a>
+                <a href="/tags/VMware/" style="color: #00a596">VMware</a>
             </span>
             
         </span>
@@ -216,24 +216,27 @@
     
     <div class="content" v-pre>
         <p>在使用 VMware 虚拟机的过程中，有时候我们需要扩展虚拟机的硬盘空间。这篇博文将介绍两种方法，一种是使用 fdisk 进行分区，另一种是使用 parted 命令进行操作。两种方法的操作步骤基本一致，其中方法一多了一步分区的操作。</p>
+<p><em>开始之前默认已在VMware中扩容，下面是后面的操作。</em></p>
 <blockquote>
 <h1 id="方法一：使用-fdisk-进行分区"><a href="#方法一：使用-fdisk-进行分区" class="headerlink" title="方法一：使用 fdisk 进行分区"></a>方法一：使用 fdisk 进行分区</h1></blockquote>
 <h4 id="1-创建分区（fdisk）"><a href="#1-创建分区（fdisk）" class="headerlink" title="1. 创建分区（fdisk）"></a>1. 创建分区（fdisk）</h4><pre><code class="bash">fdisk /dev/sda
 # 在命令环境中按 n 键，一路按回车，最后按 w 键保存，然后按 q 键退出
 </code></pre>
-<h4 id="2-创建物理卷（pvcreate）"><a href="#2-创建物理卷（pvcreate）" class="headerlink" title="2. 创建物理卷（pvcreate）"></a>2. 创建物理卷（pvcreate）</h4><pre><code class="bash">pvcreate /dev/sda3  # sda3 根据第一步中创建的分区名称进行替换
+<h4 id="2-重新扫描硬盘（partprobe）"><a href="#2-重新扫描硬盘（partprobe）" class="headerlink" title="2. 重新扫描硬盘（partprobe）"></a>2. 重新扫描硬盘（partprobe）</h4><pre><code class="bash">sudo partprobe
 </code></pre>
-<h4 id="3-将磁盘扩展到卷组（vgextend）"><a href="#3-将磁盘扩展到卷组（vgextend）" class="headerlink" title="3. 将磁盘扩展到卷组（vgextend）"></a>3. 将磁盘扩展到卷组（vgextend）</h4><pre><code class="bash">vgextend centos /dev/sda3  # sda3 根据第一步中创建的分区名称进行替换
+<h4 id="3-创建物理卷（pvcreate）"><a href="#3-创建物理卷（pvcreate）" class="headerlink" title="3. 创建物理卷（pvcreate）"></a>3. 创建物理卷（pvcreate）</h4><pre><code class="bash">pvcreate /dev/sda3  # sda3 根据第一步中创建的分区名称进行替换
 </code></pre>
-<h4 id="4-扩展逻辑分区（lvextend）"><a href="#4-扩展逻辑分区（lvextend）" class="headerlink" title="4. 扩展逻辑分区（lvextend）"></a>4. 扩展逻辑分区（lvextend）</h4><pre><code class="bash"># 根据实际情况选择扩容到 centos-root 还是 centos-home 逻辑分区，请修改注释
+<h4 id="4-将磁盘扩展到卷组（vgextend）"><a href="#4-将磁盘扩展到卷组（vgextend）" class="headerlink" title="4. 将磁盘扩展到卷组（vgextend）"></a>4. 将磁盘扩展到卷组（vgextend）</h4><pre><code class="bash">vgextend centos /dev/sda3  # sda3 根据第一步中创建的分区名称进行替换
+</code></pre>
+<h4 id="5-扩展逻辑分区（lvextend）"><a href="#5-扩展逻辑分区（lvextend）" class="headerlink" title="5. 扩展逻辑分区（lvextend）"></a>5. 扩展逻辑分区（lvextend）</h4><pre><code class="bash"># 根据实际情况选择扩容到 centos-root 还是 centos-home 逻辑分区，请修改注释
 # 100% 是将所有的磁盘空间扩容到指定分区，也可以根据需要进行调整比例
 # 也支持指定大小，比如 10G 等等（指定固定值时参数 -l 需要修改为 -L)
 lvextend -l+100%FREE /dev/mapper/centos-root
 # lvextend -l+100%FREE /dev/mapper/centos-home
 </code></pre>
-<h4 id="5-使扩展生效（xfs-growfs）"><a href="#5-使扩展生效（xfs-growfs）" class="headerlink" title="5. 使扩展生效（xfs_growfs）"></a>5. 使扩展生效（xfs_growfs）</h4><pre><code class="bash">xfs_growfs /dev/mapper/centos-root  # 根据扩容的分区进行选择使用
+<h4 id="6-使扩展生效（xfs-growfs）"><a href="#6-使扩展生效（xfs-growfs）" class="headerlink" title="6. 使扩展生效（xfs_growfs）"></a>6. 使扩展生效（xfs_growfs）</h4><pre><code class="bash">xfs_growfs /dev/mapper/centos-root  # 根据扩容的分区进行选择使用
 </code></pre>
-<h4 id="6-查看（df-H）"><a href="#6-查看（df-H）" class="headerlink" title="6. 查看（df -H）"></a>6. 查看（df -H）</h4><pre><code class="bash">df -H
+<h4 id="7-查看（df-H）"><a href="#7-查看（df-H）" class="headerlink" title="7. 查看（df -H）"></a>7. 查看（df -H）</h4><pre><code class="bash">df -H
 </code></pre>
 <blockquote>
 <h1 id="方法二：使用-parted-命令进行操作"><a href="#方法二：使用-parted-命令进行操作" class="headerlink" title="方法二：使用 parted 命令进行操作"></a>方法二：使用 parted 命令进行操作</h1></blockquote>
@@ -253,9 +256,9 @@ pvdisplay
 <h4 id="5-扩展逻辑分区"><a href="#5-扩展逻辑分区" class="headerlink" title="5. 扩展逻辑分区"></a>5. 扩展逻辑分区</h4><pre><code class="bash"># 开始增加到逻辑卷中
 lvextend -l+100%FREE /dev/mapper/centos-root
 </code></pre>
-<h4 id="6-使扩展生效（xfs-growfs）"><a href="#6-使扩展生效（xfs-growfs）" class="headerlink" title="6. 使扩展生效（xfs_growfs）"></a>6. 使扩展生效（xfs_growfs）</h4><pre><code class="bash">xfs_growfs /dev/mapper/centos-root
+<h4 id="6-使扩展生效（xfs-growfs）-1"><a href="#6-使扩展生效（xfs-growfs）-1" class="headerlink" title="6. 使扩展生效（xfs_growfs）"></a>6. 使扩展生效（xfs_growfs）</h4><pre><code class="bash">xfs_growfs /dev/mapper/centos-root
 </code></pre>
-<h4 id="7-查看（df-H）"><a href="#7-查看（df-H）" class="headerlink" title="7. 查看（df -H）"></a>7. 查看（df -H）</h4><pre><code class="bash">df -H
+<h4 id="7-查看（df-H）-1"><a href="#7-查看（df-H）-1" class="headerlink" title="7. 查看（df -H）"></a>7. 查看（df -H）</h4><pre><code class="bash">df -H
 </code></pre>
 <p>以上两种方法均适用于 VMware 下 Linux 虚拟机的硬盘扩容操作。根据实际需求选择合适的方法，并确保在进行操作之前备份重要数据以防止数据丢失。希望这篇博文能够帮助你成功完成虚拟机扩容的操作。</p>
 
