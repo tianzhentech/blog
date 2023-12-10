@@ -320,6 +320,13 @@
   </url>
   
   <url>
+    <loc>https://tianzhentech.cn/tags/Favicon/</loc>
+    <lastmod>2023-12-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tianzhentech.cn/tags/Linux/</loc>
     <lastmod>2023-12-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -342,13 +349,6 @@
   
   <url>
     <loc>https://tianzhentech.cn/tags/Linux%E6%89%A9%E5%AE%B9/</loc>
-    <lastmod>2023-12-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/Favicon/</loc>
     <lastmod>2023-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
