@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tianzhentech.cn/icons-display-abnormally-due-to-CORS-issues/</loc>
+    
+    <lastmod>2023-12-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tianzhentech.cn/use-oss-for-picture-on-hexo/</loc>
     
     <lastmod>2023-12-11</lastmod>
@@ -245,13 +254,6 @@
 
   
   <url>
-    <loc>https://tianzhentech.cn/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tianzhentech.cn/tags/Typora/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -267,6 +269,27 @@
   
   <url>
     <loc>https://tianzhentech.cn/tags/Hexo/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/ParticleX/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/Front-Matter/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -294,14 +317,21 @@
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/ParticleX/</loc>
+    <loc>https://tianzhentech.cn/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/Front-Matter/</loc>
+    <loc>https://tianzhentech.cn/tags/WebP/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E5%9B%BE/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -344,27 +374,6 @@
   
   <url>
     <loc>https://tianzhentech.cn/tags/Filter/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/WebP/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E5%9B%BE/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -440,17 +449,38 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://tianzhentech.cn/categories/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/</loc>
+    <loc>https://tianzhentech.cn/tags/CORS/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
+    <loc>https://tianzhentech.cn/tags/Font-Awesome/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/CDN/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
     <loc>https://tianzhentech.cn/categories/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/categories/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
