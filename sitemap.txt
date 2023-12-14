@@ -1,5 +1,5 @@
-https://tianzhentech.cn/favicon/
 https://tianzhentech.cn/icons-display-abnormally-due-to-CORS-issues/
+https://tianzhentech.cn/favicon/
 https://tianzhentech.cn/use-oss-for-picture-on-hexo/
 https://tianzhentech.cn/Image-Hosting-Typora/
 https://tianzhentech.cn/optimize-the-mobile-experience-of-blog/
