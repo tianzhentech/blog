@@ -1,9 +1,9 @@
+https://tianzhentech.cn/favicon/
 https://tianzhentech.cn/icons-display-abnormally-due-to-CORS-issues/
 https://tianzhentech.cn/use-oss-for-picture-on-hexo/
 https://tianzhentech.cn/Image-Hosting-Typora/
 https://tianzhentech.cn/optimize-the-mobile-experience-of-blog/
 https://tianzhentech.cn/about/index.html
-https://tianzhentech.cn/favicon/
 https://tianzhentech.cn/detailed-guide-expanding-linux-vm-vmware/
 https://tianzhentech.cn/setting-up-image-hosting-to-accelerate-your-static-website/
 https://tianzhentech.cn/create-efficient-hexo-background-webp/
