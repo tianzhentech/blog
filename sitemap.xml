@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tianzhentech.cn/Pushing-the-Hexo-blog-to-the-Nginx-server/</loc>
+    
+    <lastmod>2024-01-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tianzhentech.cn/use-oss-for-picture-on-hexo/</loc>
     
     <lastmod>2024-01-12</lastmod>
@@ -270,41 +279,6 @@
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/k8s/</loc>
-    <lastmod>2024-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/docker/</loc>
-    <lastmod>2024-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/Hexo/</loc>
-    <lastmod>2024-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/ParticleX/</loc>
-    <lastmod>2024-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/Front-Matter/</loc>
-    <lastmod>2024-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tianzhentech.cn/tags/Typora/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -319,21 +293,35 @@
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/</loc>
+    <loc>https://tianzhentech.cn/tags/Hexo/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/WebP/</loc>
+    <loc>https://tianzhentech.cn/tags/k8s/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E5%9B%BE/</loc>
+    <loc>https://tianzhentech.cn/tags/docker/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/ParticleX/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/Front-Matter/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -389,6 +377,41 @@
   </url>
   
   <url>
+    <loc>https://tianzhentech.cn/tags/JavaWeb/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/Filter/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/WebP/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E5%9B%BE/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tianzhentech.cn/tags/Favicon/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -417,13 +440,6 @@
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/markdown/</loc>
-    <lastmod>2024-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tianzhentech.cn/tags/CORS/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -445,14 +461,7 @@
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/JavaWeb/</loc>
-    <lastmod>2024-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianzhentech.cn/tags/Filter/</loc>
+    <loc>https://tianzhentech.cn/tags/markdown/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -480,6 +489,13 @@
   </url>
   
   <url>
+    <loc>https://tianzhentech.cn/tags/OSS/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tianzhentech.cn/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -487,7 +503,7 @@
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/tags/OSS/</loc>
+    <loc>https://tianzhentech.cn/tags/Git/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
