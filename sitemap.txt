@@ -1,5 +1,5 @@
-https://tianzhentech.cn/about/index.html
 https://tianzhentech.cn/Pushing-the-Hexo-blog-to-the-Nginx-server/
+https://tianzhentech.cn/about/index.html
 https://tianzhentech.cn/use-oss-for-picture-on-hexo/
 https://tianzhentech.cn/setting-random-background-homepage-particlex-theme/
 https://tianzhentech.cn/inserting-photos-hexo-static-pages/
