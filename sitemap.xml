@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tianzhentech.cn/ED25519-as-a-replacement-for-RSA/</loc>
+    
+    <lastmod>2024-01-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tianzhentech.cn/Pushing-the-Hexo-blog-to-the-Nginx-server/</loc>
     
     <lastmod>2024-01-21</lastmod>
@@ -504,6 +513,20 @@
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/SSH/</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianzhentech.cn/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
