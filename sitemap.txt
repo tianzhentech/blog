@@ -1,4 +1,3 @@
-https://tianzhentech.cn/test/
 https://tianzhentech.cn/The-Complete-Guide-to-Hadoop-and-HBase-Distributed-Cluster-Architecture/
 https://tianzhentech.cn/ED25519-as-a-replacement-for-RSA/
 https://tianzhentech.cn/Pushing-the-Hexo-blog-to-the-Nginx-server/
