@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="zh"><head><meta name="google-site-verification" content="6dKXSVBE3ZyVxHtiFCvc57UwP5MEzcp51X7Wn5okSoE"><link rel="icon" href="/api/images/tianzhen.jpg"><script>document.addEventListener("DOMContentLoaded",function(){var e;768<=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)&&((e=document.createElement("script")).src="/api/js/fireworks.min.js",document.head.appendChild(e),(e=document.createElement("script")).src="/api/js/background.min.js",document.head.appendChild(e),(e=document.createElement("script")).src="/api/js/cursor.min.js",document.head.appendChild(e),(e=document.createElement("canvas")).id="fireworks",e.style.cssText="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767",document.body.appendChild(e),(e=document.createElement("canvas")).id="background",e.style.cssText="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1",document.body.appendChild(e),(e=document.createElement("div")).id="cursor",document.body.appendChild(e))})</script><meta charset="utf-8"><title>随机森林（更新中） | Tianzhen</title><meta name="author" content="Tianzhen"><meta name="description" content="My Learning Journey Blog"><meta name="keywords" content="seo优化 javaweb教程 网络技术分享"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><link rel="preconnect" href="https://cdn.staticfile.org"><link rel="preconnect" href="https://twikoo.lt514.com"><link rel="preconnect" href="https://umami.hoshiroko.com"><link rel="preconnect" href="/api"><script src="/api/js/vue.global.prod.min.js"></script><script src="/api/js/anime.min.js"></script><script async src="https://umami.hoshiroko.com/script.js" data-website-id="6c968d09-0bb6-4304-a28c-7944d8474aad"></script><link rel="stylesheet" href="/api/fontawesome/fontawesome6.5.1/css/all.min.css"><link rel="stylesheet" href="/api/css/fonts/fonts.loli.net.min.css"><script>const mixins={}</script><script src="/api/js/highlight.min.js"></script><script src="/api/js/highlightjs-line-numbers.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"><script src="/api/js/lib/highlight.js"></script><script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script><script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.css"><script src="/api/js/lib/math.js"></script><script src="/api/js/lib/preview.js"></script><script src="/api/js/twikoo.all.min.js"></script><link rel="stylesheet" href="/api/css/main.css"><style>.flex-container{display:flex;justify-content:center;align-items:center;height:100vh}</style><meta name="generator" content="Hexo 6.3.0"></head><script>var st,OriginTitile=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="o(இ௰இ)怎么就走了！",clearTimeout(st)):(document.title="☆*o(≧▽≦)o*☆欢迎回来！",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script><body><div id="layout"><transition name="fade"><div id="loading" v-show="loading"><div id="loading-circle"><h2>LOADING</h2><p>加载过慢请开启缓存 浏览器默认开启</p><img src="/api/images/loading.gif"></div></div></transition><div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}"><nav id="desktop-menu"><a class="title" href="/"><span>TIANZHEN</span> </a><a href="/"><i class="fa-solid fa-house fa-fw"></i> <span>&ensp;Home</span> </a><a href="/about"><i class="fa-solid fa-id-card fa-fw"></i> <span>&ensp;About</span> </a><a href="/archives"><i class="fa-solid fa-box-archive fa-fw"></i> <span>&ensp;Archives</span> </a><a href="/categories"><i class="fa-solid fa-bookmark fa-fw"></i> <span>&ensp;Categories</span> </a><a href="/tags"><i class="fa-solid fa-tags fa-fw"></i> <span>&ensp;Tags</span> </a><a target="_blank" rel="noopener" href="https://umami.hoshiroko.com/share/jpoapxn7zGXoKcSv/tianzhentech"><i class="fa-solid fa-chart-column fa-fw"></i> <span>&ensp;Umami</span></a></nav><nav id="mobile-menu"><div class="title" @click="showMenuItems = !showMenuItems"><i class="fa-solid fa-bars fa-fw"></i> <span>&emsp;TIANZHEN</span></div><transition name="slide"><div class="items" v-show="showMenuItems"><a href="/"><div class="item"><div style="min-width:20px;max-width:50px;width:10%"><i class="fa-solid fa-house fa-fw"></i></div><div style="min-width:100px;max-width:150%;width:20%">Home</div></div></a><a href="/about"><div class="item"><div style="min-width:20px;max-width:50px;width:10%"><i class="fa-solid fa-id-card fa-fw"></i></div><div style="min-width:100px;max-width:150%;width:20%">About</div></div></a><a href="/archives"><div class="item"><div style="min-width:20px;max-width:50px;width:10%"><i class="fa-solid fa-box-archive fa-fw"></i></div><div style="min-width:100px;max-width:150%;width:20%">Archives</div></div></a><a href="/categories"><div class="item"><div style="min-width:20px;max-width:50px;width:10%"><i class="fa-solid fa-bookmark fa-fw"></i></div><div style="min-width:100px;max-width:150%;width:20%">Categories</div></div></a><a href="/tags"><div class="item"><div style="min-width:20px;max-width:50px;width:10%"><i class="fa-solid fa-tags fa-fw"></i></div><div style="min-width:100px;max-width:150%;width:20%">Tags</div></div></a></div></transition></nav></div><transition name="fade"><div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div></transition><div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'"><div class="article"><div><h1>随机森林（更新中）</h1></div><div class="info"><span class="date"><span class="icon"><i class="fa-solid fa-calendar fa-fw"></i> </span>2024/5/21 </span><span class="category"><a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="icon"><i class="fa-solid fa-bookmark fa-fw"></i> </span>机器学习 </a></span><span class="tags"><span class="icon"><i class="fa-solid fa-tags fa-fw"></i> </span><span class="tag"><a href="/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" style="color:#03a9f4">集成学习</a> </span><span class="tag"><a href="/tags/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" style="color:#00a596">随机森林</a></span></span></div><div class="content" v-pre><p><a href="https://tianzhentech.cn/Iris-classification/">上文</a>已经介绍了集成学习，也初步讲明了Bagging的原理，本文将从数学原理上介绍Bagging与随机森林，然后以一个手写数字识别的小例子来演示随机森林算法。</p><p>本文基于<a target="_blank" rel="noopener" href="https://www.educoder.net/tasks/pem5k7u2/1567449/nwj5fpkosi3e?coursesId=pem5k7u2">机器学习之随机森林算法 (educoder.net)</a>来介绍Bagging和随机森林。</p><h1><span id="1-bagging">1. Bagging</span></h1><blockquote><p>Bagging在训练时的特点就是<strong>随机有放回采样</strong>和<strong>并行</strong>。</p></blockquote><ul><li><strong>随机有放回采样</strong>：假设训练数据集有 m 条样本数据，每次从这 m 条数据中随机取一条数据放入采样集，然后将其返回，让下一次采样有机会仍然能被采样。然后重复 m 次，就能得到拥有 m 条数据的采样集，该采样集作为 Bagging 的众多分类器中的一个作为训练数据集。假设有 T 个分类器（随便什么分类器），那么就重复 T 此随机有放回采样，构建出 T 个采样集分别作为 T 个分类器的训练数据集。</li><li><strong>并行</strong>：假设有 10 个分类器，在 Boosting 中，1 号分类器训练完成之后才能开始 2 号分类器的训练，而在 Bagging 中，分类器可以同时进行训练，当所有分类器训练完成之后，整个 Bagging 的训练过程就结束了。</li></ul><p>Bagging 训练过程如下图所示：</p><p><img loading="lazy" src="/../images/UnVTUHJ2RHJkc1YxU2RqSHEzTFh2UT09.png" alt="预览大图"></p><p><strong>预测</strong></p><p>Bagging 在预测时非常简单，就是<strong>投票</strong>！比如现在有 5 个分类器，有 3 个分类器认为当前样本属于 A 类，1 个分类器认为属于 B 类，1 个分类器认为属于 C 类，那么 Bagging 的结果会是 A 类（因为 A 类的票数最高）。</p><p>Bagging 预测过程如下图所示:</p><p><img loading="lazy" src="/../images/cUtLbkM1U1B0aWJwdDdqcWo5OUltUT09.png" alt="预览大图"></p><h4><span id="编程要求">编程要求</span></h4><p>在 begin-end 中完成 BaggingClassifier 类中的 fit 和 predict 函数。分类器可使用 sklearn 提供的 DecisionTreeClassifier。要求模型保存在 self.models 中。</p><p>fit 函数用于 Bagging 的训练过程，其中：</p><ul><li>feature ：训练集数据，类型为 ndarray；</li><li>label ：训练集标签，类型为 ndarray。</li></ul><p>predict 函数，实现预测功能，并将标签返回，其中：</p><ul><li>feature ：测试集数据，类型为 ndarray 。<strong>（PS：feature中有多条数据）</strong></li></ul><p><strong>全部代码</strong>：</p><pre><code class="python">import numpy as np
+from collections import Counter
+from sklearn.tree import DecisionTreeClassifier
+
+class BaggingClassifier():
+    def __init__(self, n_model=10):
+        &#39;&#39;&#39;
+        初始化函数
+        &#39;&#39;&#39;
+        # 分类器的数量，默认为10
+        self.n_model = n_model
+        # 用于保存模型的列表，训练好分类器后将对象append进去即可
+        self.models = []
+
+    def fit(self, feature, label):
+        &#39;&#39;&#39;
+        训练模型
+        :param feature: 训练数据集所有特征组成的ndarray
+        :param label:训练数据集中所有标签组成的ndarray
+        :return: None
+        &#39;&#39;&#39;
+        # 对于每一个模型
+        for i in range(self.n_model):
+            # 获取特征数量
+            m = len(feature)
+            # 生成随机索引，用于自助采样（bootstrap sampling）
+            index = np.random.choice(m, m)
+            # 根据随机索引生成训练数据集和标签
+            sample_data = feature[index]
+            sample_lable = label[index]
+            # 创建并训练决策树分类器
+            model = DecisionTreeClassifier()
+            model = model.fit(sample_data, sample_lable)
+            # 将训练好的分类器添加到模型列表中
+            self.models.append(model)
+
+    def predict(self, feature):
+        &#39;&#39;&#39;
+        :param feature:训练数据集所有特征组成的ndarray
+        :return:预测结果，如np.array([0, 1, 2, 2, 1, 0])
+        &#39;&#39;&#39;
+        # 创建一个空列表用于保存每个模型的预测结果
+        result = []
+        # 创建一个空列表用于保存所有模型的预测结果
+        vote = []
+        # 对于每一个模型
+        for model in self.models:
+            # 预测特征的类别
+            r = model.predict(feature)
+            # 将预测结果添加到投票列表中
+            vote.append(r)
+        # 将投票列表转换为ndarray
+        vote = np.array(vote)
+        # 对于每一个特征
+        for i in range(len(feature)):
+            # 统计每个类别的票数，并按票数降序排序
+            v = sorted(Counter(vote[:, i]).items(), key=lambda x: x[1], reverse=True)
+            # 将票数最多的类别添加到结果列表中
+            result.append(v[0][0])
+        # 将结果列表转换为ndarray并返回
+        return np.array(result)
+</code></pre><h1><span id="2-随机森林算法流程">2. 随机森林算法流程</span></h1><p><strong>随机森林的训练流程</strong></p><p>随机森林是 Bagging 的一种扩展变体，随机森林的训练过程相对与 Bagging 的训练过程的改变有：</p><ul><li>基学习器： Bagging 的基学习器可以是<strong>任意学习器</strong>，而随机森林则是以<strong>决策树作为基学习器</strong>。</li><li>随机属性选择：假设原始训练数据集有 10 个特征，从这 10 个特征中随机选取 k 个特征构成训练数据子集，然后将这个子集作为训练集扔给决策树去训练。其中 k 的取值一般为 log2(特征数量) 。</li></ul><p>这样的改动通常会使得<strong>随机森林具有更加强的泛化性</strong>，因为每一棵决策树的训练数据集是随机的，而且训练数据集中的特征也是随机抽取的。如果每一棵决策树模型的差异比较大，那么就很容易能够解决决策树容易过拟合的问题。</p><p>随机森林训练过程伪代码如下：</p><pre><code>#假设数据集为D，标签集为A，需要构造的决策树为tree
+def fit(D, A):
+    models = []
+    for i in range(决策树的数量):
+        有放回的随机采样数据，得到数据集sample_D和标签sample_A
+        从采样到的数据中随机抽取K个特征构成训练集sub_D
+        构建决策树tree
+        tree.fit(sub_D, sample_A)
+        models.append(tree)
+    return models
+</code></pre><h5><span id="随机森林的预测流程">随机森林的预测流程</span></h5><p>随机森林的预测流程与 Bagging 的预测流程基本一致，如果是回归，就将结果基学习器的预测结果全部加起来算平均；如果是分类，就投票，票数最多的结果作为最终结果。<strong>但需要注意的是，在预测时所用到的特征必须与训练模型时所用到的特征保持一致。</strong>例如，第 3 棵决策树在训练时用到了训练集的第 2，5，8 这 3 个特征。那么在预测时也要用第 2，5，8 这 3 个特征所组成的测试集传给第 3 棵决策树进行预测。</p><h4><span id="编程要求">编程要求</span></h4><p>在 begin-end 中完成 RandomForestClassifier 类中的 fit 和 predict 函数。分类器可使用 sklearn 提供的 DecisionTreeClassifier ，要求模型保存在 self.models 中。</p><p>fit 函数用于随机森林的训练过程，其中：</p><ul><li>feature ：训练集数据，类型为 ndarray；</li><li>label ：训练集标签，类型为 ndarray。</li></ul><p>predict 函数，实现预测功能，并将标签返回，其中：</p><ul><li>feature ：测试集数据，类型为 ndarray 。<strong>（PS：feature中有多条数据）</strong></li></ul><p><strong>全部代码</strong>：</p><pre><code class="python">import numpy as np
+from collections import Counter
+from sklearn.tree import DecisionTreeClassifier
+
+class RandomForestClassifier():
+    def __init__(self, n_model=10):
+        &#39;&#39;&#39;
+        初始化函数
+        &#39;&#39;&#39;
+        # 分类器的数量，默认为10
+        self.n_model = n_model
+        # 用于保存模型的列表，训练好分类器后将对象append进去即可
+        self.models = []
+        # 用于保存决策树训练时随机选取的列的索引
+        self.col_indexs = []
+
+    def fit(self, feature, label):
+        &#39;&#39;&#39;
+        训练模型
+        :param feature: 训练数据集所有特征组成的ndarray
+        :param label:训练数据集中所有标签组成的ndarray
+        :return: None
+        &#39;&#39;&#39;
+        # 对于每一个模型
+        for i in range(self.n_model):
+            # 获取特征数量
+            m = len(feature)
+            # 生成随机索引，用于自助采样（bootstrap sampling）
+            index = np.random.choice(m, m)
+            # 随机选择一部分特征的索引
+            col_index = np.random.permutation(len(feature[0]))[:int(np.log2(len(feature[0])))]
+            # 根据随机索引生成训练数据集和标签
+            sample_data = feature[index]
+            # 只保留选定的特征
+            sample_data = sample_data[:, col_index]
+            sample_lable = label[index]
+            # 创建并训练决策树分类器
+            model = DecisionTreeClassifier()
+            model = model.fit(sample_data, sample_lable)
+            # 将训练好的分类器和特征索引添加到相应的列表中
+            self.models.append(model)
+            self.col_indexs.append(col_index)
+
+    def predict(self, feature):
+        &#39;&#39;&#39;
+        :param feature:训练数据集所有特征组成的ndarray
+        :return:预测结果，如np.array([0, 1, 2, 2, 1, 0])
+        &#39;&#39;&#39;
+        # 创建一个空列表用于保存每个模型的预测结果
+        result = []
+        # 创建一个空列表用于保存所有模型的预测结果
+        vote = []
+        # 对于每一个模型
+        for i, model in enumerate(self.models):
+            # 只保留选定的特征
+            f = feature[:, self.col_indexs[i]]
+            # 预测特征的类别
+            r = model.predict(f)
+            # 将预测结果添加到投票列表中
+            vote.append(r)
+        # 将投票列表转换为ndarray
+        vote = np.array(vote)
+        # 对于每一个特征
+        for i in range(len(feature)):
+            # 统计每个类别的票数，并按票数降序排序
+            v = sorted(Counter(vote[:, i]).items(), key=lambda x: x[1], reverse=True)
+            # 将票数最多的类别添加到结果列表中
+            result.append(v[0][0])
+        # 将结果列表转换为ndarray并返回
+        return np.array(result)
+</code></pre><h1><span id="3-手写数字识别">3. 手写数字识别</span></h1><h5><span id="数据简介">数据简介</span></h5><p>本关使用的是手写数字数据集，该数据集有 1797 个样本，每个样本包括 8*8 像素（实际上是一条样本有 64 个特征，每个像素看成是一个特征，每个特征都是 float 类型的数值）的图像和一个 [0, 9] 整数的标签。比如下图的标签是 2 ：</p><p><img loading="lazy" src="/../images/d3pzSUZNcHYzRjdhLzgxTlJuN0toUT09.png" alt="预览大图"></p><h5><span id="randomforestclassifier">RandomForestClassifier</span></h5><p>RandomForestClassifier 的构造函数中有两个常用的参数可以设置：</p><ul><li>n_estimators ：森林中决策树的数量；</li><li>criterion ：构建决策树时，划分节点时用到的指标。有 gini （<strong>基尼系数</strong>）, entropy (<strong>信息增益</strong>)。若不设置，默认为 gini；</li><li>max_depth ：决策树的最大深度，如果发现模型已经出现过拟合，可以尝试将该参数调小。若不设置，默认为 None；</li><li>max_features ：随机选取特征时选取特征的数量，一般传入 auto 或者 log2，默认为 auto ， auto 表示 max_features&#x3D;sqrt(训练集中特征的数量) ；log2 表示 max_features&#x3D;log2(训练集中特征的数量)。</li></ul><p>RandomForestClassifier 类中的 fit 函数实现了随机森林分类器训练模型的功能，predict 函数实现了模型预测的功能。</p><p>其中 fit 函数的参数如下：</p><ul><li>X ：大小为 [样本数量,特征数量] 的 ndarry，存放训练样本；</li><li>Y ：值为整型，大小为 [样本数量] 的 ndarray，存放训练样本的分类标签。</li></ul><p>而 predict 函数有一个向量输入：</p><ul><li>X ：大小为 [样本数量,特征数量] 的 ndarry，存放预测样本。</li></ul><p>RandomForestClassifier 的使用代码如下：</p><pre><code class="python">from sklearn.ensemble import RandomForestClassifierclf = RandomForestClassifier(n_estimators=50)clf.fit(X_train, Y_train)result = clf.predict(X_test)
+</code></pre><h4><span id="编程要求">编程要求</span></h4><p>在右侧区域的 begin-end 之间填写<code>digit_predict(train_image, train_label, test_image)</code>函数完成手写数字分类任务，其中：</p><ul><li>train_image ：包含多条训练样本的样本集，类型为 ndarray ， shape 为 [-1, 8, 8] ，<strong>在喂给分类器之前请记得将其变形</strong>；</li><li>train_label ：包含多条训练样本标签的标签集，类型为 ndarray；</li><li>test_image ：包含多条测试样本的测试集，类型为 ndarray；</li><li>return ： test_image 对应的预测标签，类型为 ndarray。</li></ul><p><strong>全部代码</strong>：</p><pre><code class="python">from sklearn.ensemble import RandomForestClassifier
+import numpy as np
+
+def digit_predict(train_image, train_label, test_image):
+    &#39;&#39;&#39;
+    实现功能：训练模型并输出预测结果
+    :param train_image: 包含多条训练样本的样本集，类型为ndarray,shape为[-1, 8, 8]
+    :param train_label: 包含多条训练样本标签的标签集，类型为ndarray
+    :param test_image: 包含多条测试样本的测试集，类型为ndarry
+    :return: test_image对应的预测标签，类型为ndarray
+    &#39;&#39;&#39;
+
+    # 将训练集的图像数据从三维转换为二维，每一行代表一个样本，每一列代表一个特征
+    # 原始的图像数据是8x8的，转换后每一行有64个特征
+    X = np.reshape(train_image, newshape=(-1, 64))
+
+    # 创建一个随机森林分类器，设置树的数量为500，树的最大深度为10
+    clf = RandomForestClassifier(n_estimators=500, max_depth=10)
+
+    # 使用训练数据和对应的标签训练（拟合）随机森林分类器
+    clf.fit(X, y=train_label)
+
+    # 使用训练好的随机森林分类器对测试数据进行预测，并返回预测结果
+    return clf.predict(test_image)
+</code></pre></div><div id="comment"><div id="twikoo-container"></div></div></div><footer id="footer"><div id="footer-wrap"><div>&copy; 2023 - 2024 Tianzhen <span id="footer-icon"><i class="fa-solid fa-font-awesome fa-fw"></i> </span>&commat;Tianzhen</div><div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a></div><div><a href="https://icp.gov.moe/?keyword=20236514" target="_blank">萌ICP备20236514号</a> <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn">豫ICP备2023040339号</a></div></div><div><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now=new Date;function createtime(){var n=new Date("11/07/2023 00:00:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}setInterval("createtime()",250)</script></div></footer></div><transition name="fade"><div id="preview" ref="preview" v-show="previewShow"><img id="preview-content" ref="previewContent"></div></transition></div><script src="/api/js/main.js"></script><script>twikoo.init({el:"#twikoo-container",envId:"https://twikoo.lt514.com",region:"",path:location.pathname,lang:"zh"})</script><p style="text-align:center;margin:0" id="saintwei"></p><script>var saintwei=function(r){var i="気：",n=["现在开始天晴了","天空比大海还要深，是个未知的世界","天气因你逆转，世界因你天晴","能遇见你真是太好了","不管晴天还是雨天，我只是想和你相遇","我只是想再一次的见到她啊","是你让我找到了存在的意义","无论你在哪里，我一定拼尽全力去见你","拜托了，我们就这样一直在一起","只是天空的样子，就能改变人们的心情","天空上是另一个世界，自古如此","我从来不知道，渴望蓝天的人居然有那么多","天气真的是很不可思议，光只是天空的模样就让人感动不已","这是一个只有我和她知道，关于这世界的秘密","100%的晴天女孩","在充满暴风雨的世界，一起勇敢地爱下去","那年夏天，在那个天空之上的我们，把这个世界的样貌，彻底的改变了","天空比大海还要深，是个未知的世界","重要的人，想见的人，无论晴雨，不管多远，都一定要去见你","晴天里有阳光，阳光总是充满温馨，相信有这么多朋友的厚爱和鼓励，晴天会永远阳光灿烂","天晴得像一张蓝纸，几片薄薄的白云，像被阳光晒化了似的，随风缓缓浮游着","天空澄碧，纤云不染，远山含黛，和风送暖","浅蓝色的天幕，像一幅洁净的丝绒，镶着黄色的金边","一场飘洒的雨后，阳光带着清醒的空气飞来，试问是哪位仙子的生日，阳光如此美丽","晴天的午后，夏日的阳光如水般音符一样灿烂的流动，湿澈了不同的妩媚的忧伤","天那么蓝，连一丝浮絮都没有，像被过滤了一切杂色，瑰丽地熠熠发光","神明啊!求你!求你!求你!让我再见她一次","比起晴空，我更需要阳菜，天气什么的，就这样疯狂下去也可以"].map(function(t){return t}),l=["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],a={text:"",prefixP:-5,skillI:0,skillP:0,direction:"forward",delay:2,step:1};!function t(){var e=n[a.skillI];a.step?a.step--:(a.step=1,a.prefixP<i.length?(0<=a.prefixP&&(a.text+=i[a.prefixP]),a.prefixP++):"forward"===a.direction?a.skillP<e.length?(a.text+=e[a.skillP],a.skillP++):a.delay?a.delay--:(a.direction="backward",a.delay=2):0<a.skillP?(a.text=a.text.slice(0,-1),a.skillP--):(a.skillI=(a.skillI+1)%n.length,a.direction="forward")),r.textContent=a.text,r.appendChild(function(t){for(var e=document.createDocumentFragment(),r=0;r<t;r++){var i=document.createElement("span");i.textContent=String.fromCharCode(94*Math.random()+33),i.style.color=l[Math.floor(Math.random()*l.length)],e.appendChild(i)}return e}(a.prefixP<i.length?Math.min(5,5+a.prefixP):Math.min(5,e.length-a.skillP))),setTimeout(t,75)}()};saintwei(document.getElementById("saintwei"))</script></body></html>

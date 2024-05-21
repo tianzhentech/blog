@@ -1,3 +1,4 @@
+https://tianzhentech.cn/Random-Forest/
 https://tianzhentech.cn/Iris-classification/
 https://tianzhentech.cn/Handwritten-Digit-Recognition/
 https://tianzhentech.cn/Configure-a-static-IP-address-on-CentOS-7/
@@ -78,6 +79,7 @@ https://tianzhentech.cn/tags/PyTorch/
 https://tianzhentech.cn/tags/Adaboost/
 https://tianzhentech.cn/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/
 https://tianzhentech.cn/tags/Boosting/
+https://tianzhentech.cn/tags/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/
 https://tianzhentech.cn/categories/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/
 https://tianzhentech.cn/categories/Linux/
 https://tianzhentech.cn/categories/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5/
