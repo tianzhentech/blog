@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tianzhentech.cn/Random-Forest/</loc>
+    <loc>https://tianzhentech.cn/Handwritten-Digit-Recognition/</loc>
     
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,16 +13,16 @@
   <url>
     <loc>https://tianzhentech.cn/Iris-classification/</loc>
     
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tianzhentech.cn/Handwritten-Digit-Recognition/</loc>
+    <loc>https://tianzhentech.cn/Random-Forest/</loc>
     
-    <lastmod>2024-05-18</lastmod>
+    <lastmod>2024-09-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -328,7 +328,7 @@
 
   <url>
     <loc>https://tianzhentech.cn/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -336,315 +336,315 @@
   
   <url>
     <loc>https://tianzhentech.cn/tags/k8s/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/docker/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/SSH/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Typora/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Hexo/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/ParticleX/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Front-Matter/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Git/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Base64/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8A%A0%E5%AF%86/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/JWT/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/WebP/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E5%9B%BE/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/JavaWeb/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Filter/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Linux/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/VMware/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Linux%E6%89%A9%E5%AE%B9/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Favicon/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E5%86%85%E7%BD%91%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/loophole/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/CORS/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Font-Awesome/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/CDN/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/markdown/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Interceptor/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Spring-Boot/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/OSS/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Hadoop/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/HBase/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/CNN/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/CUDA/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/PyTorch/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Adaboost/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/Boosting/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/tags/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -653,42 +653,42 @@
   
   <url>
     <loc>https://tianzhentech.cn/categories/%E4%B8%AA%E4%BA%BA%E7%BA%AA%E5%BD%95/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/categories/Linux/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/categories/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/categories/Web%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianzhentech.cn/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
